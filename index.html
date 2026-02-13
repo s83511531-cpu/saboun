@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صابون طبيعي للشعر | متجر رسمي</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif}
+body{background:#fdf8f5}
+.topbar{background:#27ae60;color:white;text-align:center;padding:8px;font-size:14px}
+.container{width:90%;max-width:700px;margin:auto}
+.hero{text-align:center;padding:30px 0}
+.price{color:#e74c3c;font-size:26px;font-weight:bold;margin:10px 0}
+.rating{color:#f1c40f;margin:5px 0}
+img{width:100%;border-radius:15px;margin:15px 0;transition:0.3s}
+img:hover{transform:scale(1.03)}
+.card{background:white;padding:20px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.07);margin:15px 0}
+ul{list-style:none} li{margin:8px 0}
+input,select{width:100%;padding:14px;margin:8px 0;border-radius:10px;border:1px solid #ddd;font-size:15px}
+.total{font-size:18px;font-weight:bold;margin:10px 0;color:#e74c3c}
+button{width:100%;padding:15px;border:none;border-radius:12px;background:linear-gradient(135deg,#25D366,#1da851);color:white;font-size:16px;cursor:pointer}
+.fixed-btn{position:fixed;bottom:0;left:0;right:0;background:#25D366;padding:12px;text-align:center;color:white;font-size:18px;cursor:pointer}
+.footer{text-align:center;padding:20px;background:#f5d0c5;margin-bottom:60px}
+.popup{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);display:none;justify-content:center;align-items:center;z-index:999}
+.popup-content{background:white;padding:30px;border-radius:15px;text-align:center;width:90%;max-width:350px}
+.whatsapp-float{position:fixed;bottom:80px;left:20px;background:#25D366;color:white;font-size:24px;padding:15px;border-radius:50%;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,0.2);}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+🚚 توصيل لجميع ولايات الجزائر | الدفع عند الاستلام
+</div>
+
+<div class="container">
+
+<div class="hero">
+<h1>صابون طبيعي ضد تساقط الشعر</h1>
+<div class="rating">★★★★★ (4.9)</div>
+<div class="price">2300 دج</div>
+<div style="color:red;font-weight:bold">
+⚡ باقي <span id="stock">17</span> قطعة فقط
+</div>
+<img src="image1.jpg">
+<img src="image2.jpg">
+</div>
+
+<div class="card">
+<h2>المميزات</h2>
+<ul>
+<li>✔ يقلل التساقط</li>
+<li>✔ يقوي الجذور</li>
+<li>✔ 100٪ طبيعي</li>
+<li>✔ مناسب للنساء والطالبات</li>
+<li>✔ نتائج خلال أسبوع</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>اطلبي الآن</h2>
+<form onsubmit="sendOrder();return false;">
+<input type="text" id="name" placeholder="الاسم الكامل" required>
+<input type="tel" id="phone" placeholder="رقم الهاتف" required>
+
+<select id="wilaya" onchange="calculateTotal()" required>
+<option value="">اختاري الولاية</option>
+<option value="550-1100">01 - أدرار (مكتب:550 دج - منزل:1100 دج)</option>
+<option value="350-650">02 - الشلف (350-650)</option>
+<option value="350-800">03 - الأغواط (350-800)</option>
+<option value="350-650">04 - أم البواقي (350-650)</option>
+<option value="350-650">05 - باتنة (350-650)</option>
+<option value="350-600">06 - بجاية (350-600)</option>
+<option value="350-750">07 - بسكرة (350-750)</option>
+<option value="500-950">08 - بشار (500-950)</option>
+<option value="300-450">09 - البليدة (300-450)</option>
+<option value="350-600">10 - البويرة (350-600)</option>
+<option value="700-1500">11 - تمنراست (700-1500)</option>
+<option value="350-650">12 - تبسة (350-650)</option>
+<option value="350-650">13 - تلمسان (350-650)</option>
+<option value="350-700">14 - تيارت (350-700)</option>
+<option value="350-600">15 - تيزي وزو (350-600)</option>
+<option value="300-300">16 - الجزائر (300-300)</option>
+<option value="450-800">17 - الجلفة (450-800)</option>
+<option value="350-650">18 - جيجل (350-650)</option>
+<option value="350-650">19 - سطيف (350-650)</option>
+<option value="350-700">20 - سعيدة (350-700)</option>
+<option value="350-650">21 - سكيكدة (350-650)</option>
+<option value="350-650">22 - سيدي بلعباس (350-650)</option>
+<option value="350-650">23 - عنابة (350-650)</option>
+<option value="350-700">24 - قالمة (350-700)</option>
+<option value="350-650">25 - قسنطينة (350-650)</option>
+<option value="350-600">26 - المدية (350-600)</option>
+<option value="350-650">27 - مستغانم (350-650)</option>
+<option value="350-700">28 - المسيلة (350-700)</option>
+<option value="350-650">29 - معسكر (350-650)</option>
+<option value="450-900">30 - ورقلة (450-900)</option>
+<option value="350-600">31 - وهران (350-600)</option>
+<option value="500-950">32 - البيض (500-950)</option>
+<option value="850-1500">33 - إليزي (850-1500)</option>
+<option value="350-650">34 - برج بوعريريج (350-650)</option>
+<option value="300-500">35 - بومرداس (300-500)</option>
+<option value="350-700">36 - الطارف (350-700)</option>
+<option value="750-1300">37 - تندوف (750-1300)</option>
+<option value="350-650">38 - تيسمسيلت (350-650)</option>
+<option value="450-900">39 - الوادي (450-900)</option>
+<option value="350-700">40 - خنشلة (350-700)</option>
+<option value="400-750">41 - سوق أهراس (400-750)</option>
+<option value="300-500">42 - تيبازة (300-500)</option>
+<option value="400-700">43 - ميلة (400-700)</option>
+<option value="350-650">45 - النعامة (350-650)</option>
+<option value="450-900">46 - عين تموشنت (450-900)</option>
+<option value="400-650">47 - غرداية (400-650)</option>
+<option value="400-800">48 - غليزان (400-800)</option>
+<option value="400-700">49 - تيميمون (400-700)</option>
+<option value="750-1200">50 - برج باجي مختار (750-1200)</option>
+<option value="450-900">51 - أولاد جلال (450-900)</option>
+<option value="550-800">52 - بني عباس (550-800)</option>
+<option value="1000-1000">53 - إن صالح (1000-1000)</option>
+<option value="900-1600">54 - إن قزام (900-1600)</option>
+<option value="750-1200">55 - تقرت (750-1200)</option>
+<option value="450-800">56 - جانت (450-800)</option>
+<option value="750-1500">57 - المغير (750-1500)</option>
+<option value="500-900">58 - المنيعة (500-900)</option>
+<option value="550-900">59 - إضافية (550-900)</option>
+
+</select>
+
+<select id="deliveryType" onchange="calculateTotal()" required>
+<option value="0">مكتب</option>
+<option value="1">منزل</option>
+</select>
+
+<select id="quantity" onchange="calculateTotal()">
+<option value="1">1 قطعة</option>
+<option value="2">2 قطع</option>
+<option value="3">3 قطع</option>
+</select>
+
+<div class="total">المجموع: <span id="totalPrice">2300</span> دج</div>
+<button type="submit">تأكيد الطلب عبر واتساب</button>
+</form>
+</div>
+
+</div>
+
+<div class="footer">© متجر الصابون الطبيعي 2026</div>
+
+<div class="fixed-btn" onclick="scrollToForm()">اطلبي الآن 🔥</div>
+
+<div id="popup" class="popup">
+<div class="popup-content">
+<h3>🎁 خصم 10% لأول 20 طلب</h3>
+<p>استفيدي الآن قبل انتهاء العرض!</p>
+<button onclick="closePopup()">استمري في الطلب</button>
+</div>
+</div>
+
+<a href="https://wa.me/213656491823" class="whatsapp-float" target="_blank">💬</a>
+
+<script>
+// عداد المخزون
+var stock = localStorage.getItem("stock");
+if(!stock){stock=Math.floor(Math.random()*10)+10;localStorage.setItem("stock", stock);}
+document.getElementById("stock").innerText=stock;
+
+// حساب المجموع حسب الولاية + نوع التوصيل + الكمية
+function calculateTotal(){
+    var qty = parseInt(document.getElementById("quantity").value) || 1;
+    var wilaya = document.getElementById("wilaya").value.split("-");
+    var deliveryType = parseInt(document.getElementById("deliveryType").value) || 0;
+    var deliveryCost = parseInt(wilaya[deliveryType] || 0);
+    var total = (qty*2300) + deliveryCost;
+    document.getElementById("totalPrice").innerText = total;
+}
+
+// ارسال الطلب
+function sendOrder(){
+    var name = document.getElementById("name").value;
+    var phone = document.getElementById("phone").value;
+    var wilayaText = document.getElementById("wilaya").options[document.getElementById("wilaya").selectedIndex].text;
+    var deliveryType = document.getElementById("deliveryType").options[document.getElementById("deliveryType").selectedIndex].text;
+    var qty = document.getElementById("quantity").value;
+    var total = document.getElementById("totalPrice").innerText;
+
+    var msg = "طلب جديد:%0A"+
+    "الاسم: "+name+"%0A"+
+    "الهاتف: "+phone+"%0A"+
+    "الولاية: "+wilayaText+"%0A"+
+    "نوع التوصيل: "+deliveryType+"%0A"+
+    "الكمية: "+qty+" قطعة%0A"+
+    "المجموع: "+total+" دج";
+
+    window.open("https://wa.me/213656491823?text="+msg);
+
+    // تحديث المخزون
+    stock--;
+    localStorage.setItem("stock", stock);
+    document.getElementById("stock").innerText = stock;
+}
+
+// Popup خصم
+setTimeout(function(){document.getElementById("popup").style.display="flex";},5000);
+function closePopup(){document.getElementById("popup").style.display="none";}
+
+// زر ثابت
+function scrollToForm(){window.scrollTo({top:600,behavior:'smooth'});}
+</script>
+
+</body>
+</html>
